@@ -50,7 +50,7 @@ public class Person {
                 ", name='" + name + '\'' +
                 ", surname='" + surname + '\'' +
                 ", function=" + function +
-                '}';
+                '}' + "\n";
     }
 
     public ArrayList<Person> showPersons() {
