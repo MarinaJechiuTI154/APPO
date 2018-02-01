@@ -1,12 +1,14 @@
 package documents;
 
+import persons.Person;
+
 import java.util.ArrayList;
 import java.util.Date;
 
 public class Document implements DocumentManagement{
     private  int numberDoc;
     private int typeAcc;
-    private int user;
+    private Person user;
     private Date date;
 
     private static int number = 1;
@@ -14,7 +16,7 @@ public class Document implements DocumentManagement{
     public Document() {
     }
 
-    public Document(int typeAcc, int user, Date date) {
+    public Document(int typeAcc, Person user, Date date) {
         this.numberDoc = number++;
         this.typeAcc = typeAcc;
         this.user = user;
@@ -29,7 +31,7 @@ public class Document implements DocumentManagement{
         return typeAcc;
     }
 
-    public int getUser() {
+    public Person getUser() {
         return user;
     }
 
@@ -41,7 +43,7 @@ public class Document implements DocumentManagement{
         this.typeAcc = typeAcc;
     }
 
-    private void setUser(int user) {
+    private void setUser(Person user) {
         this.user = user;
     }
 

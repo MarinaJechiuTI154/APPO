@@ -1,5 +1,6 @@
 package documents;
 
+import persons.Person;
 import store.Product;
 
 import java.util.Date;
@@ -10,13 +11,13 @@ public class PourchaseInvoce extends Document {
     private double price;
     private String provider;
 
-    public PourchaseInvoce(int typeAcc, int user, Date date, double quantity, double price, String provider) {
+    public PourchaseInvoce(int typeAcc, Person user, Date date, Product product, double quantity, double price, String provider) {
         super(typeAcc, user, date);
+        this.product = product;
         this.quantity = quantity;
         this.price = price;
         this.provider = provider;
     }
-
 
     public void setProduct(Product product) {
         this.product = product;
@@ -57,6 +58,6 @@ public class PourchaseInvoce extends Document {
                 ", quantity=" + quantity +
                 ", price=" + price +
                 ", provider='" + provider + '\'' +
-                '}';
+                '}'+ "\n";
     }
 }

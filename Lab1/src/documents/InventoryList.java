@@ -1,17 +1,21 @@
 package documents;
 
+import persons.Person;
 import store.Product;
 
 import java.util.ArrayList;
+import java.util.Date;
 
-public class InventoryList {
+public class InventoryList extends Document {
     private String administrator;
     private Product product;
     private double quantity;
     private double price;
 
-    public InventoryList(String administrator, double quantity, double price) {
+    public InventoryList(int typeAcc, Person user, Date date, String administrator, Product product, double quantity, double price) {
+        super(typeAcc, user, date);
         this.administrator = administrator;
+        this.product = product;
         this.quantity = quantity;
         this.price = price;
     }
@@ -55,6 +59,6 @@ public class InventoryList {
                 ", product=" + product.getName() +
                 ", quantity=" + quantity +
                 ", price=" + price +
-                '}';
+                '}' + "\n";
     }
 }

@@ -1,5 +1,6 @@
 package documents;
 
+import persons.Person;
 import store.Product;
 
 import java.util.Date;
@@ -10,8 +11,9 @@ public class SalesInvoce extends Document {
     private double price;
     private String customer;
 
-    public SalesInvoce(int typeAcc, int user, Date date, double quantity, double price, String customer) {
+    public SalesInvoce(int typeAcc, Person user, Date date, Product product, double quantity, double price, String customer) {
         super(typeAcc, user, date);
+        this.product = product;
         this.quantity = quantity;
         this.price = price;
         this.customer = customer;
@@ -56,6 +58,6 @@ public class SalesInvoce extends Document {
                 ", quantity=" + quantity +
                 ", price=" + price +
                 ", customer='" + customer + '\'' +
-                '}';
+                '}' + "\n";
     }
 }
