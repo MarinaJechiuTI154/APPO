@@ -1,31 +1,32 @@
 package documents;
 
+import persons.Administration;
 import persons.Person;
 import store.Product;
-
-import java.util.ArrayList;
 import java.util.Date;
 
 public class InventoryList extends Document {
-    private String administrator;
+    private Administration user;
+    private Person gestionar;
     private Product product;
     private double quantity;
     private double price;
 
-    public InventoryList(int typeAcc, Person user, Date date, String administrator, Product product, double quantity, double price) {
-        super(typeAcc, user, date);
-        this.administrator = administrator;
+    public InventoryList(int typeAcc, Date date, Administration user, Person gestionar, Product product, double quantity, double price) {
+        super(typeAcc, date);
+        this.gestionar = gestionar;
         this.product = product;
         this.quantity = quantity;
         this.price = price;
+
     }
 
-    public String getAdministrator() {
-        return administrator;
+    public Person getGestionar() {
+        return gestionar;
     }
 
-    public void setAdministrator(String administrator) {
-        this.administrator = administrator;
+    public void setGestionar(Person gestionar) {
+        this.gestionar = gestionar;
     }
 
     public String getProduct() {
@@ -52,13 +53,23 @@ public class InventoryList extends Document {
         this.price = price;
     }
 
-    @Override
-    public String toString() {
-        return "InventoryList{" +
-                "administrator='" + administrator + '\'' +
-                ", product=" + product.getName() +
-                ", quantity=" + quantity +
-                ", price=" + price +
-                '}' + "\n";
+    public Administration getUser() {
+        return user;
     }
+
+    @Override
+    public void print() {
+        System.out.println("InventoryList{" +
+                "Number doc: " + getNumberDoc() + "\n" +
+                "Type doc: "  + getTypeAcc()  + "\n" +
+                "Date: " + getDate() + "\n" +
+                "User: "  + user.getName() +"  " + user.getSurname() + "\n" +
+                "gestionar='" + gestionar.getName() +"  " + user.getSurname()+ '\n' +
+                ", product=" + product.getName() + '\n' +
+                ", quantity=" + quantity + '\n' +
+                ", price=" + price +
+                '}' + "\n");
+    }
+
+
 }

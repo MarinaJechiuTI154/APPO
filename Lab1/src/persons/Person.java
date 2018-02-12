@@ -2,22 +2,19 @@ package persons;
 
 import java.util.ArrayList;
 
-public class Person {
+public abstract class Person {
     private int cod;
     private String name;
     private String surname;
-    private Function function;
 
     private static int i = 1;
-    private static ArrayList<Person>  arrayList = new ArrayList<>();
 
-    public Person(String name, String surname, Function function) {
+    public Person(String name, String surname) {
         this.cod = i++;
         this.name = name;
         this.surname = surname;
-        this.function = function;
-        arrayList.add(this);
     }
+    public int getCod(){return cod;}
 
     public String getName() {
         return name;
@@ -35,13 +32,6 @@ public class Person {
         this.surname = surname;
     }
 
-    public Function getFunction() {
-        return function;
-    }
-
-    public void setFunction(Function function) {
-        this.function = function;
-    }
 
     @Override
     public String toString() {
@@ -49,11 +39,8 @@ public class Person {
                 "cod=" + cod +
                 ", name='" + name + '\'' +
                 ", surname='" + surname + '\'' +
-                ", function=" + function +
                 '}' + "\n";
     }
 
-    public ArrayList<Person> showPersons() {
-        return arrayList;
-    }
+
 }

@@ -1,22 +1,27 @@
 package documents;
 
+import persons.Administration;
 import persons.Person;
 import store.Product;
 
 import java.util.Date;
 
 public class SalesInvoce extends Document {
+    private Administration user;
     private Product product;
     private double quantity;
     private double price;
     private String customer;
 
-    public SalesInvoce(int typeAcc, Person user, Date date, Product product, double quantity, double price, String customer) {
-        super(typeAcc, user, date);
+
+    public SalesInvoce(int typeAcc,  Date date,Administration user, Product product, double quantity, double price, String customer) {
+        super(typeAcc, date);
+        this.user = user;
         this.product = product;
         this.quantity = quantity;
         this.price = price;
         this.customer = customer;
+
     }
 
     public String getProduct() {
@@ -51,13 +56,21 @@ public class SalesInvoce extends Document {
         this.customer = customer;
     }
 
+    public Administration getUser() {
+        return user;
+    }
+
     @Override
-    public String toString() {
-        return "SalesInvoce{" +
+    public void print() {
+        System.out.println("SalesInvoce{" +
+                "Number doc: " + getNumberDoc() + "\n" +
+                "Type doc: "  + getTypeAcc()  + "\n" +
+                "Date: " + getDate() + "\n" +
+                "User: "  + user.getName() +"  " + user.getSurname() + "\n" +
                 "product=" + product.getName() +
                 ", quantity=" + quantity +
                 ", price=" + price +
                 ", customer='" + customer + '\'' +
-                '}' + "\n";
+                '}' + "\n");
     }
 }

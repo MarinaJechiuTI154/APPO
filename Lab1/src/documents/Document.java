@@ -3,24 +3,22 @@ package documents;
 import persons.Person;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Date;
 
-public class Document implements DocumentManagement{
+public class Document {
     private  int numberDoc;
     private int typeAcc;
-    private Person user;
     private Date date;
 
     private static int number = 1;
+    private static ArrayList<Document> arrayList = new ArrayList<>();
 
-    public Document() {
-    }
-
-    public Document(int typeAcc, Person user, Date date) {
+    public Document(int typeAcc, Date date) {
         this.numberDoc = number++;
         this.typeAcc = typeAcc;
-        this.user = user;
         this.date = date;
+        arrayList.add(this);
     }
 
     public int getNumberDoc() {
@@ -31,9 +29,6 @@ public class Document implements DocumentManagement{
         return typeAcc;
     }
 
-    public Person getUser() {
-        return user;
-    }
 
     public Date getDate() {
         return date;
@@ -43,40 +38,35 @@ public class Document implements DocumentManagement{
         this.typeAcc = typeAcc;
     }
 
-    private void setUser(Person user) {
-        this.user = user;
-    }
 
-
-
-    @Override
-    public String toString() {
-        return "Number doc: " + getNumberDoc() + "\n" +
+    public void print() {
+        System.out.println("Number doc: " + getNumberDoc() + "\n" +
                 "Type doc: "  + getTypeAcc()  + "\n" +
-                "User: "  + getUser() + "\n" +
-                "Date: " + getDate() + "\n" ;
+                "Date: " + getDate() + "\n");
+    }
+
+    public void showDocuments(){
+        System.out.println(Arrays.toString(arrayList.toArray()));
     }
 
 
-    @Override
-    public void editDoc() {
-    }
 
-    @Override
-    public ArrayList<Document> deleteDoc(ArrayList <Document> arrayList) {
+    public void deleteDocument(int number) {
         for (Document list : arrayList) {
+            if(list.getNumberDoc() == number)
             arrayList.remove(list);
         }
-        return arrayList;
     }
 
-    @Override
-    public boolean searchDoc(ArrayList<Document> arrayList, int i) {
+
+    public boolean searchDocument(int number){
         for (Document list : arrayList) {
-            if(list.getNumberDoc() == i)
+            if(list.getNumberDoc() == number)
                 return true;
         }
         return false;
     }
+
+
 
 }
