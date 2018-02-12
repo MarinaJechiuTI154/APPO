@@ -14,6 +14,7 @@ public class InventoryList extends Document {
 
     public InventoryList(int typeAcc, Date date, Administration user, Person gestionar, Product product, double quantity, double price) {
         super(typeAcc, date);
+        this.user = user;
         this.gestionar = gestionar;
         this.product = product;
         this.quantity = quantity;
@@ -64,7 +65,7 @@ public class InventoryList extends Document {
                 "Type doc: "  + getTypeAcc()  + "\n" +
                 "Date: " + getDate() + "\n" +
                 "User: "  + user.getName() +"  " + user.getSurname() + "\n" +
-                "gestionar='" + gestionar.getName() +"  " + user.getSurname()+ '\n' +
+                "gestionar='" + gestionar.getName() +"  " + gestionar.getSurname()+ '\n' +
                 ", product=" + product.getName() + '\n' +
                 ", quantity=" + quantity + '\n' +
                 ", price=" + price +

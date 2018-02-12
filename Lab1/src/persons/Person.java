@@ -37,7 +37,7 @@ public abstract class Person {
     public String toString() {
         return "Person{" +
                 "cod=" + cod +
-                ", name='" + name + '\'' +
+                ", name='" + getName() + '\'' +
                 ", surname='" + surname + '\'' +
                 '}' + "\n";
     }

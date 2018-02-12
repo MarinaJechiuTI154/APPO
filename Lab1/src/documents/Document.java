@@ -12,13 +12,11 @@ public class Document {
     private Date date;
 
     private static int number = 1;
-    private static ArrayList<Document> arrayList = new ArrayList<>();
 
     public Document(int typeAcc, Date date) {
         this.numberDoc = number++;
         this.typeAcc = typeAcc;
         this.date = date;
-        arrayList.add(this);
     }
 
     public int getNumberDoc() {
@@ -44,29 +42,5 @@ public class Document {
                 "Type doc: "  + getTypeAcc()  + "\n" +
                 "Date: " + getDate() + "\n");
     }
-
-    public void showDocuments(){
-        System.out.println(Arrays.toString(arrayList.toArray()));
-    }
-
-
-
-    public void deleteDocument(int number) {
-        for (Document list : arrayList) {
-            if(list.getNumberDoc() == number)
-            arrayList.remove(list);
-        }
-    }
-
-
-    public boolean searchDocument(int number){
-        for (Document list : arrayList) {
-            if(list.getNumberDoc() == number)
-                return true;
-        }
-        return false;
-    }
-
-
 
 }

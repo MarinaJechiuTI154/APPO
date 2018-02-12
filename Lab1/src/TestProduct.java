@@ -1,5 +1,8 @@
 import com.sun.xml.internal.bind.v2.runtime.unmarshaller.XsiNilLoader;
+import documents.Document;
 import documents.InventoryList;
+import documents.PourchaseInvoce;
+import documents.SalesInvoce;
 import persons.Administration;
 import persons.Employee;
 import persons.Person;
@@ -47,6 +50,10 @@ public class TestProduct {
         InventoryList inventoryList1 = new InventoryList(1, new Date(10/01/2017), user1, user2, material1, 120, 12.5);
         System.out.println("Lista documentelor inregistrate: ");
         inventoryList1.print();
+        Document salesInvoice = new SalesInvoce(1, new Date(10/2/2018), user4, omvsd, 125, 25.7, "SRL A");
+        salesInvoice.print();
+        Document pourchaseInvoice = new PourchaseInvoce(2, new Date(01/01/2018), user3, products, 12,12, "SRL B");
+        pourchaseInvoice.print();
 
     }
 
