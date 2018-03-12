@@ -1,6 +1,5 @@
 package persons;
 
-import java.util.ArrayList;
 
 public abstract class Person {
     private int cod;
@@ -14,7 +13,10 @@ public abstract class Person {
         this.name = name;
         this.surname = surname;
     }
-    public int getCod(){return cod;}
+
+    public int getCod() {
+        return cod;
+    }
 
     public String getName() {
         return name;

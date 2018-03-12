@@ -1,13 +1,8 @@
 package documents;
-
-import persons.Person;
-
-import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Date;
 
 public class Document {
-    private  int numberDoc;
+    private int numberDoc;
     private int typeAcc;
     private Date date;
 
@@ -39,7 +34,7 @@ public class Document {
 
     public void print() {
         System.out.println("Number doc: " + getNumberDoc() + "\n" +
-                "Type doc: "  + getTypeAcc()  + "\n" +
+                "Type doc: " + getTypeAcc() + "\n" +
                 "Date: " + getDate() + "\n");
     }
 

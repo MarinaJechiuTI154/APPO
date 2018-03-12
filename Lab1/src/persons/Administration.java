@@ -5,17 +5,20 @@ import persons.enums.AdministrationFunction;
 import java.util.ArrayList;
 import java.util.Arrays;
 
-public class Administration extends Person  {
+
+public class Administration extends Person {
     private int accesRight;
     private double salary;
     private AdministrationFunction function;
 
+    private static ArrayList<Administration> arrayList = new ArrayList<>();
 
     public Administration(String name, String surname, int accesRight, double salary, AdministrationFunction function) {
         super(name, surname);
         this.accesRight = accesRight;
         this.salary = salary;
         this.function = function;
+        arrayList.add(this);
     }
 
     public int getAccesRight() {
@@ -51,6 +54,11 @@ public class Administration extends Person  {
                 "salary=" + salary +
                 ", function=" + function +
                 '}' + "\n";
+    }
+
+    public String show() {
+
+        return Arrays.toString(arrayList.toArray());
     }
 
 }

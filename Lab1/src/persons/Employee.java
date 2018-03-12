@@ -12,12 +12,14 @@ public class Employee extends Person {
     private double salary;
     private ExecutionFunction function;
 
+    private static ArrayList<Employee> arrayList = new ArrayList<>();
 
     public Employee(String name, String surname, ExecutionFunction function, Departments department, double salary) {
         super(name, surname);
         this.function = function;
         this.department = department;
         this.salary = salary;
+        arrayList.add(this);
     }
 
     public Departments getDepartment() {
@@ -50,7 +52,11 @@ public class Employee extends Person {
                 "department=" + department +
                 ", salary=" + salary +
                 ", function=" + function +
-                '}'+ "\n";
+                '}' + "\n";
+    }
+
+    public String show() {
+        return Arrays.toString(arrayList.toArray());
     }
 
 }

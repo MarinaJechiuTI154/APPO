@@ -6,8 +6,7 @@ public class Product {
     private int subaccount;
     private String name;
 
-    public Product() {
-    }
+
 
     public Product(int subaccount, String name) {
         this.subaccount = subaccount;
@@ -28,5 +27,14 @@ public class Product {
 
     public String getName() {
         return name;
+    }
+
+    @Override
+    public String toString() {
+        return "Product{" +
+                "account=" + account +
+                ", subaccount=" + subaccount +
+                ", name='" + name + '\'' +
+                '}';
     }
 }

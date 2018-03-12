@@ -1,49 +1,42 @@
-import com.sun.xml.internal.bind.v2.runtime.unmarshaller.XsiNilLoader;
 import documents.Document;
 import documents.InventoryList;
 import documents.PourchaseInvoce;
 import documents.SalesInvoce;
 import persons.Administration;
 import persons.Employee;
-import persons.Person;
 import persons.enums.AdministrationFunction;
 import persons.enums.Departments;
 import persons.enums.ExecutionFunction;
 import store.*;
-import sun.plugin2.main.server.Plugin;
-
-import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Date;
 
 public class TestProduct {
     public static void main(String[] args) {
-        ArrayList<Person> listPerson = new ArrayList<>();
         //create Administration person;
         Administration user1 = new Administration("Tonu", "Maria", 1, 1500, AdministrationFunction.Contabil);
-        listPerson.add(user1);
-        Person user2 = new Employee("Alina", "Iovu", ExecutionFunction.Depozitar, Departments.Depozitare, 2000);
-        listPerson.add(user2);
+        Employee user2 = new Employee("Alina", "Iovu", ExecutionFunction.Depozitar, Departments.Depozitare, 2000);
         Administration user3 = new Administration("Cristi", "Albu", 3, 1600, AdministrationFunction.Contabil_sef);
-        listPerson.add(user3);
         Administration user4 = new Administration("Mihai", "Plugaru", 3, 5500, AdministrationFunction.Director);
-        listPerson.add(user4);
-        System.out.println("Persoanele inregistrate\n");
-        System.out.println(Arrays.toString(listPerson.toArray()));
+        System.out.println("Persoanele din administratie inregistrate\n");
+        System.out.println(user1.show());
+        System.out.println("Muncitorii inregistrate\n");
+        System.out.println(user2.show());
 
 
         //create store
-        ArrayList<Product> listProduct = new ArrayList<>();
         Materials material1 = new Materials(2, "lapte");
-        listProduct.add(material1);
-        Product omvsd = new OMVSD(1, "Capsator");
-        listProduct.add(omvsd);
+        OMVSD omvsd = new OMVSD(1, "Capsator");
         Merchandises merchandises = new Merchandises(2, "Lapte condensat");
-        listProduct.add(merchandises);
-        Product products = new Products(4, "Biscuiti");
-        listProduct.add(products);
-        System.out.println("\n\n Produsele din stoc \n");
-        System.out.println(Arrays.toString(listProduct.toArray()));
+        Products products = new Products(4, "Biscuiti");
+        System.out.println("\n\n Materialele din stoc \n");
+        System.out.println(material1.show() + "\n");
+        System.out.println("Marfurile din stoc \n");
+        System.out.println(merchandises.show() + "\n");
+        System.out.println("OMVSD in stoc");
+        System.out.println(omvsd.show());
+        System.out.println("Produse in stoc \n");
+        System.out.println(products.show());
+
 
 
         //create idocuments
