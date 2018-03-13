@@ -1,8 +1,6 @@
-import achitare.AchitareCash;
-import comanda.ComandaDirect;
-import comanda.ComandaTelefon;
+import java.util.ArrayList;
 
-public class ComenziPlasateTelefon extends Comenzi implements ComandaTelefon, AchitareCash {
+public class ComenziPlasateTelefon implements Achitare, Comanda{
     private int numarTelefon;
     private double suma;
     private String product;
@@ -17,14 +15,29 @@ public class ComenziPlasateTelefon extends Comenzi implements ComandaTelefon, Ac
     }
 
     @Override
-    public void achitareCash() {
-        delete(this);
+    public void achitareOnline(ArrayList<Object> list) {
+
     }
 
     @Override
-    public void comandaTelefon(int numarTelefon, double suma, String produs) {
+    public  void achitareCash(ArrayList<Object> list) {
+        list.remove(this);
+    }
+
+    @Override
+    public void comandaDirect(double suma, String produs, ArrayList<Object> list) {
+
+    }
+
+    @Override
+    public void comandaOnline(int cont, String produs, ArrayList<Object> list) {
+
+    }
+
+    @Override
+    public void comandaTelefon(int numarTelefon, double suma, String produs, ArrayList<Object> list) {
         adaugaComanda(numarTelefon, suma, produs);
-        setList(this);
+        list.add(this);
     }
 
     @Override
