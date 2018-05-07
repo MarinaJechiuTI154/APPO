@@ -6,12 +6,14 @@ public class ComenziPlasateOnline extends Comenzi implements AchitareOnline, Com
     private String produs;
 
     public ComenziPlasateOnline() {
+        super();
     }
 
     private void adaugaComanda(int cont, String produs) {
         if(cont> 1000000000 && cont < 999999999)
         this.cont = cont;
         this.produs = produs;
+        setList(this);
     }
 
     @Override

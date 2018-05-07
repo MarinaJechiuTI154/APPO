@@ -6,12 +6,14 @@ public class ComenziDirecte extends Comenzi implements ComandaDirect, AchitareCa
     private String produs;
 
     public ComenziDirecte() {
+        super();
     }
 
     private void adaugaComanda(double suma, String produs) {
         this.suma = suma;
         if (suma>0)
         this.produs = produs;
+        setList(this);
     }
 
     @Override

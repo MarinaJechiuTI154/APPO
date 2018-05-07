@@ -8,12 +8,14 @@ public class ComenziPlasateTelefon extends Comenzi implements ComandaTelefon, Ac
     private String product;
 
     public ComenziPlasateTelefon() {
+        super();
     }
 
     private void adaugaComanda (int numarTelefon, double suma, String product) {
         this.numarTelefon = numarTelefon;
         this.suma = suma;
         this.product = product;
+        setList(this);
     }
 
     @Override
