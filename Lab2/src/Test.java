@@ -18,6 +18,8 @@ public class Test {
         comenziPlasateTelefon.comandaTelefon(0104212, 130.2, "Pizza Vegetariana");
         lista.setList(comenziPlasateTelefon);
 
+        lista.delete(comenziDirecte);
+
         System.out.println(lista);
 
 

@@ -17,7 +17,6 @@ public class Disciplina {
     }
 
 
-
     public Disciplina(double examen, int absente) {
         this.examen = examen;
         this.absente = absente;
